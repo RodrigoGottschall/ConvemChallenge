@@ -1,18 +1,15 @@
-// routes/index.js
-
 const express = require("express");
-const router = express.Router();
+const router = require("./routes/index");
+const app = express();
+const port = 3000;
+
+// Middleware para JSON
+app.use(express.json());
 
 // Rotas da API
+app.use("/api", router);
 
-router.post("/transactions", (req, res) => {
-  const { idempotencyId, amount, type } = req.body;
-
-  // Validar dados (opcional)
-
-  // Salvar transação no banco de dados (substitua por sua implementação)
-
-  res.status(201).send({ message: "Transação criada com sucesso!" });
+// Iniciar servidor
+app.listen(port, () => {
+  console.log(`Servidor escutando na porta ${port}`);
 });
-
-module.exports = router;
