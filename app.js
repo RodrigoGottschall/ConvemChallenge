@@ -14,7 +14,7 @@ AWS.config.update(config);
 app.use(bodyParser.json());
 
 // Obter URL da fila SQS
-const queueUrl = "https://sqs.us-east-1.amazonaws.com/123456789012/my-queue";
+const queueUrl = "https://sqs.sa-east-1.amazonaws.com/211125635976/convemQueue";
 
 // Rotas da API
 app.post("/transactions", (req, res) => {
